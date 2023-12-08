@@ -26,12 +26,14 @@ public class ApplicationController {
     }
 
     @GetMapping(value="/questions/{pageNumber}")
-    public Page<Object[]> getQuestions(@PathVariable("pageNumber") int pageNumber) {
-        return questionsService.getQuestions(pageNumber);
+    public List<Object[]> getQuestions(@PathVariable("pageNumber") int pageNumber) {
+        
+        Page<Object[]> page = questionsService.getQuestions(pageNumber);
+        return page.getContent();
     }
 
      
-    @GetMapping(value="/answers/{ids}")
+    @GetMapping(value = "/answers/{ids}")
     public List<Object[]> getAnswers(@PathVariable List<Long> ids) {
         return questionsService.getAnswers(ids);
     }

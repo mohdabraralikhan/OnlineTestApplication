@@ -1,14 +1,9 @@
 .tab-content {
   padding-bottom: 1.3rem;
 }
-
 hr{
   border-color:#55c57a;
 }
-
-
-
-
 .form-check-input:checked {
   background-color: #55c57a;
   border-color: #55c57a;
@@ -16,5 +11,8 @@ hr{
 
 *:focus {
   border-color: #55c57a;
-  box-shadow: 2px 2px px rgba(84, 196, 121, 0.5)
+  box-shadow: 2px 2px px #54c47980;
+}
+.ccontent .question:hover {
+  background-color: rgba(196, 194, 84, 0.16)
 }

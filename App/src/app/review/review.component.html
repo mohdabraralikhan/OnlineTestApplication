@@ -1,1 +1,65 @@
-<p>review works!</p>
+<div class="tab-content" id="pills-tabContent p-3">
+    <div class="tab-pane fade show active">
+        <h1 class="text-center my-3">
+            Review and Result
+        </h1>
+        <h4 class="text-end p-2 px-4 ">Score:{{getResult()}}</h4>
+        <hr>
+        <form class="ccontent" *ngIf="questions != null">
+            <div class="question" *ngFor="let question of questions; let i = index">
+                <div>
+                    <!-- Question -->
+                    <h4 class="ms-3"
+                        [ngClass]="{'text-danger': question.selectedOption !== getAnswer(question.ID)}">
+                        {{ question.QUESTION }}</h4>
+                    <fieldset>
+                        <!-- Options -->
+                        <div class="form-check" *ngIf="question.A">
+                            <input class="form-check-input  ms-1" type="radio" name="{{ i }}"
+                                id="{{ question.ID + 'A' }}" [checked]="question.selectedOption === 'A'">
+                            <label class="form-check-label ms-2" for="{{ question.ID + 'A' }}">
+                                1. {{ question.A }}
+                            </label>
+                        </div>
+
+                        <div class="form-check " *ngIf="question.B">
+
+                            <input class="form-check-input ms-1" type="radio" name="{{ i }}"
+                                id="{{ question.ID + 'B' }}" [checked]="question.selectedOption === 'B'">
+                            <label class="form-check-label ms-2" for="{{ question.ID + 'B' }}">
+                                2. {{ question.B }}
+                            </label>
+                        </div>
+
+                        <div class="form-check " *ngIf="question.C">
+                            <input class="form-check-input ms-1" type="radio" name="{{ i }}"
+                                id="{{ question.ID + 'C' }}" [checked]="question.selectedOption=== 'C'">
+                            <label class="form-check-label ms-2" for="{{ question.ID + 'C' }}">
+                                3. {{ question.C }}
+                            </label>
+                        </div>
+                        <div class="form-check " *ngIf="question.D">
+                            <input class="form-check-input ms-1" type="radio" name="{{ i }}"
+                                id="{{ question.ID + 'D' }}" [checked]="question.selectedOption=== 'D'">
+                            <label class="form-check-label ms-2" for="{{ question.ID + 'D' }}">
+                                4. {{ question.D }}
+                            </label>
+                        </div>
+
+                        <div class="form-check " *ngIf="question.E">
+                            <input class="form-check-input ms-1" type="radio" name="{{ i }}"
+                                id="{{ question.ID + 'E' }}" [checked]="question.selectedOption=== 'E'">
+                            <label class="form-check-label ms-2" for="{{ question.ID + 'E' }}">
+                                5. {{ question.E }}
+                            </label>
+                        </div>
+
+                    </fieldset>
+
+                </div>
+                <hr>
+            </div>
+
+        </form>
+    </div>
+</div>

@@ -1,21 +1,25 @@
 <div class="tab-content" id="pills-tabContent p-3">
   <div class="tab-pane fade show active">
+    <h1 class="text-center my-3">
+      Quiz
+    </h1>
+    <hr>
     <form class="ccontent" (ngSubmit)="onSubmit()">
-      <div *ngFor="let question of Questions; let i = index">
-        <div>
+      <div class="question" *ngFor="let question of Questions; let i = index">
+        <div >
           <!-- Question -->
           <h4 class="ms-3">{{ question.QUESTION }}</h4>
           <fieldset>
             <!-- Options -->
-            <div class="form-check  " *ngIf="question.A">
+            <div class="form-check" *ngIf="question.A">
               <input class="form-check-input  ms-1" type="radio" name="{{ i }}" id="{{ question.ID + 'A' }}"
-                [checked]="question.selectedOption=== 'A'" (change)="question.setSelectedOption('A')">
+                [checked]="question.selectedOption === 'A'" (change)="question.setSelectedOption('A')">
               <label class="form-check-label ms-2" for="{{ question.ID + 'A' }}">
                 1. {{ question.A }}
               </label>
             </div>
 
-            <div class="form-check " *ngIf="question.B">
+            <div class="form-check" *ngIf="question.B">
 
               <input class="form-check-input ms-1" type="radio" name="{{ i }}" id="{{ question.ID + 'B' }}"
                 [checked]="question.selectedOption=== 'B'" (change)="question.setSelectedOption('B')">
@@ -24,7 +28,7 @@
               </label>
             </div>
 
-            <div class="form-check " *ngIf="question.C">
+            <div class="form-check" *ngIf="question.C">
 
               <input class="form-check-input ms-1" type="radio" name="{{ i }}" id="{{ question.ID + 'C' }}"
                 [checked]="question.selectedOption=== 'C'" (change)="question.setSelectedOption('C')">
@@ -53,8 +57,7 @@
         </div>
         <hr>
       </div>
-      <button type="submit" class="btn p-3 mx-auto d-flex justify-content-center w-50  fw-mdeium " style="background-color:#55c57a;color:white;">Submit</button>
-
+      <button type="submit" [disabled]="validate()" class="btn p-3 mx-auto d-flex justify-content-center w-50  fw-mdeium " style="background-color:#55c57a; color:white;">Review and Result</button>
     </form>
   </div>
 </div>

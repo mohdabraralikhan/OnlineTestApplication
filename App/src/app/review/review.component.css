@@ -2,16 +2,20 @@
   padding-bottom: 1.3rem;
 }
 
-ul {
-  list-style: none;
-  margin-top: 1rem;
-  padding-inline-start: 0;
+
+
+
+
+.ccontent .question:hover {background-color: rgba(196, 194, 84, 0.16);}
+hr{
+  border-color:#55c57a;
+}
+.form-check-input:checked {
+  background-color: #55c57a;
+  border-color: #55c57a;
 }
 
-.ccontent li .wrapp {padding: 0.3rem 1rem 0.001rem 1rem;}
-
-.ccontent li .wrapp div {font-weight: 600;}
-
-.ccontent li .wrapp p {font-weight: 360;}
-
-.ccontent li:hover {background-color: rgb(117, 93, 255);color: white;}
+*:focus {
+  border-color: #55c57a;
+  box-shadow: 2px 2px px rgba(84, 196, 121, 0.5)
+}
